@@ -1,5 +1,5 @@
 /* Leaflet.js map part */
-const mymap = L.map('worldmap').setView([0, 0], 1);
+const mymap = L.map('worldmap').setView([0, 0], 3);
 const attribution = '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors';
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, { attribution });
@@ -15,7 +15,7 @@ async function getISS() {
     let latitude = data.latitude ;
     let longitude = data.longitude ;
     marker.setLatLng([latitude, longitude]);
-    if (initialisation = true){
+    if (initialisation === true){
         mymap.setView([latitude, longitude], 4);
         initialisation = false;
     }
